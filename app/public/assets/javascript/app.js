@@ -30,34 +30,56 @@ $(document).ready(function () {
 
     function newQuestion() {
         $("#content").fadeOut(500, function () {
-            $('input[name="answer1"]').prop('checked', false);
-            $('input[name="answer2"]').prop('checked', false);
-            $('input[name="answer3"]').prop('checked', false);
-            $('input[name="answer4"]').prop('checked', false);
-            $('input[name="answer5"]').prop('checked', false);
+            $("#answers").css("display", "inline-block");
+            $('#radio1').prop('checked', false);
+            $('#radio2').prop('checked', false);
+            $('#radio3').prop('checked', false);
+            $('#radio4').prop('checked', false);
+            $('#radio5').prop('checked', false);
 
             if (number < questions.length) {
-                $("#questCount").text("Question: " + (number + 1) + " of 10");
+                $("#questCount").text("Question: " + (number + 1) + " of " + questions.length);
                 $("#question").html(questions[number].question);
                 number++
             } else {
-                $("survey").css("display", "none");
-                $("bestMatch").css("display", "inline-block");
-                var allValues = [];
-                allValues.push({
+                $("#survey").css("display", "none");
+                $("#bestMatch").css("display", "inline-block");
+                var allValues = {
                     name: $("#name").val(),
-                    photo: $("photo").val(),
+                    photo: $("#photo").val(),
                     answers: answers
-                })
+                };
 
-                $.post("/api/addUser", allValues)
+                $.post("/api/getMatch", allValues)
                     .then(function (data) {
-                        $("#match").text(data)
+                        
+                        console.log(data);
+
+                        if (data.length === 0) {
+                            var newP = $("<p>");
+                            newP.text("No match found.")
+                            $("#match").empty();
+                            $("#match").append(newP);
+                        } else {
+                            var newP = $("<p>");
+                            newP.text("Best Match:");
+
+                            var nameP = $("<p>");
+                            nameP.text(`Name: ${data.name}`);
+
+                            var newImg = $("<img>");
+                            newImg.attr("class", "match-img-size");
+                            newImg.attr("src", data.photo);
+
+                            $("#match").empty();
+                            $("#match").append(newP, nameP, newImg);
+                        }
+                    
                     });
             }
         });
         if (number < questions.length) {
-            $("#content").fadeIn(500);
+            $("#content").fadeIn(400);
         }
     }
 
@@ -79,7 +101,7 @@ $(document).ready(function () {
         $(this).val()
         answers.push({
             answer: $(this).val(),
-            num: questions[number].num
+            num: questions[number-1].num
         })
         newQuestion()
         $(this).blur();

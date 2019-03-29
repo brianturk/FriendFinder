@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>Friend Finder</title>
 </head>
 
@@ -17,6 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <a href="/"><img id="header" src="/assets/images/baseball_friend_finder_logo.png"></a>
                 <div class="card" id="start">
                     <div class="card-body bg-light" id="msg_card_body">
                         <p>Welcome to Baseball Friend Finder!  We will do our best to find your best baseball friend match.</p>
@@ -28,8 +29,9 @@
 
                 <div class="card" id="bestMatch">
                     <div class="card-body bg-light" id="msg_card_body">
-                        <p>Best match:</p>
-                        <p id="match">Getting your best match...</p>
+                        <div id="match"><p>Getting your best match...</p></div><br><br>
+                        <a href="/"><button class="btn btn-light button-color">Home&nbsp&nbsp&nbsp<i
+                            class="fa fa-home"></i></button></a>
                     </div>
                 </div>
 
@@ -114,7 +116,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <script src="assets/javascript/app.js"></script>
+    <script src="/assets/javascript/app.js"></script>
 </body>
 
 </html>
