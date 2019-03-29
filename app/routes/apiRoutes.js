@@ -5,13 +5,13 @@ const friendData = require("../data/friendData");
 
 module.exports = (app) => {
 
-    app.get("/api/friendsList", (req, res) => {
+    app.get("/api/friends", (req, res) => {
         res.json(friendData);
     });
 
 
     // Create new current reservation - takes in JSON input
-    app.post("/api/getMatch", (req, res) => {
+    app.post("/api/friends", (req, res) => {
 
         const newUser = req.body;
 

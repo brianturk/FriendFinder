@@ -50,7 +50,7 @@ $(document).ready(function () {
                     answers: answers
                 };
 
-                $.post("/api/getMatch", allValues)
+                $.post("/api/friends", allValues)
                     .then(function (data) {
                         
                         console.log(data);
@@ -62,10 +62,10 @@ $(document).ready(function () {
                             $("#match").append(newP);
                         } else {
                             var newP = $("<p>");
-                            newP.text("Best Match:");
+                            newP.html("<h1>Best Match:</h1>");
 
                             var nameP = $("<p>");
-                            nameP.text(`Name: ${data.name}`);
+                            nameP.text(`${data.name}`);
 
                             var newImg = $("<img>");
                             newImg.attr("class", "match-img-size");
