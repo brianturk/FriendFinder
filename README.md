@@ -1,4 +1,4 @@
-# FriendFinder
+# Friend Finder
 Homework app using node express and heroku
 
 
