@@ -84,6 +84,8 @@ $(document).ready(function () {
     }
 
     $(document).on("click", "#begin", function () {
+        $("#name").val("");
+        $("#photo").val("");
         $("#start").css("display", "none");
         $("#getName").css("display", "inline-block");
 
