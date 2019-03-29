@@ -1,0 +1,51 @@
+.container{ 
+    max-width:800px;
+    width:100%; 
+  }
+
+button {
+    background-color: #ddd672 !important;
+}
+
+button:hover {
+    background-color: #e5e6b3 !important;
+}
+
+#getName, #survey, #bestMatch {
+    display: none;
+}
+
+.name-width {
+    max-width: 200px;
+}
+
+.photo-width {
+    max-width: 500px;
+}
+
+#agreeTxt {
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    font-size: 78%;
+    max-width: 250px;
+    color: rgb(87, 86, 86);
+}
+
+
+.card {
+    width:100%;
+}
+
+#namePhoto {
+    width: 700px !important;
+}
+
+.footer {
+    font-size: 75%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
